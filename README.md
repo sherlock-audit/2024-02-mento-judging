@@ -152,3 +152,47 @@ Foundry
 
 Valid medium, users retain vote in an edge case scenario then holds when owners stops (pause) contract
 
+**sherlock-admin4**
+
+The protocol team fixed this issue in the following PRs/commits:
+https://github.com/mento-protocol/mento-core/pull/410
+
+
+**sherlock-admin4**
+
+The Lead Senior Watson signed off on the fix.
+
+# Issue M-2: KYC credentials are invalid 
+
+Source: https://github.com/sherlock-audit/2024-02-mento-judging/issues/28 
+
+## Found by 
+
+We noticed the Airgrab contract was using an incorrect KYC credential and after the contest ended, we discussed this with the KYC provider and updated the contracts accordingly.
+
+Old credential:
+`level:plus;residency_not:ca,us`
+
+New credential:
+`level:plus+liveness;citizenship_not:;residency_not:cd,cu,gb,ir,kp,ml,mm,ss,sy,us,ye`
+
+This issue is not about the countries that are put as placeholder, it is about the level of the credential which lacks `liveness` and `citizenship_not:`
+
+Issue is fixed in this PR: https://github.com/mento-protocol/mento-core/pull/404/files
+
+Please review this fix and include it in the final report if everything looks good now.
+
+
+
+## Discussion
+
+**sherlock-admin4**
+
+The protocol team fixed this issue in the following PRs/commits:
+https://github.com/mento-protocol/mento-core/pull/404/files
+
+
+**sherlock-admin4**
+
+The Lead Senior Watson signed off on the fix.
+
